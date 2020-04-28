@@ -1,0 +1,138 @@
+:root{
+	font-size: 18px;
+}
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body{
+	font-family: 'Century Gothic';
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	min-height: 100vh;
+	transition: all 200ms ease;
+}
+
+body.wrong{
+	background: rgba(255, 14, 14, .5);
+	color: #fff;
+}
+
+body.correct{
+	background: rgba(20, 255, 24, .5);
+	color: #fff;
+}
+
+.puzzle{
+	width: 300px;
+	height: 300px;
+	background: #000;
+	color: #fff;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: relative;
+	margin-bottom: 2rem;
+
+}
+
+.puzzle h1{
+	font-size: 5rem;
+
+}
+
+.puzzle h3{
+	font-size: 3rem;
+	color: #14FF18;
+	opacity: 0;
+	position: absolute;
+	top: 30px;
+}
+
+.puzzle h3.active{
+	animation: textFade 600ms ease;
+}
+
+@keyframes textFade{
+	from{
+		opacity: 1;
+		transform: translateY(0px);
+	}
+	to{
+		opacity: 0;
+		transform: translateY(-30px);
+	}
+}
+
+.round{
+	position: absolute;
+	top: 10px;
+	left: 10px;
+}
+
+.round h1{
+	color: #000;
+}
+
+.reset-btn{
+	cursor: pointer;
+	padding: 1rem 2rem;
+	display: none;
+	font-weight: bold;
+	font-size: 1.2rem;
+	border-radius: 50px;
+	border: none;
+	outline: none;
+	background: #EFEF22;
+}
+
+.reset-btn.active{
+	display: block;
+}
+
+.btns{
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+	position: absolute;
+	bottom: 30px;
+	width: 100%;
+}
+
+.btns .btn{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	cursor: pointer;
+	border: none;
+	outline: none;
+	background: transparent;
+
+}
+
+.btns .btn .red-btn{
+	width: 100px;
+	height: 50px;
+	background: red;
+	cursor: pointer;
+	border-radius: 10px 10px 0 0;
+	z-index: -1;
+	transition: all 200ms;
+}
+
+.btns .btn.active .red-btn{
+	transform: translateY(40px);
+}
+
+.btns .btn .base{
+	width: 150px;
+	height: 70px;
+	background: #000;
+	border-radius: 5px 5px 0 0;
+}
